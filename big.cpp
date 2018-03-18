@@ -44,8 +44,6 @@ void big::set_num(std::string &input)
 	
 }
 
-
-
 void big::get_num() {
 
 	if (*znak == 0) cout << "+";
@@ -57,8 +55,6 @@ void big::get_num() {
 
 
 }
-
-
 
 void big::NormalLenght(vector<int> &array1, vector<int> &array2) {
 
@@ -246,10 +242,6 @@ big big::diff(big &num1, big &num2, bool &PlaseOfCall) {
 		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 }
- 
-
-
-
 
 big big::Prepair_for_Mult(big &num1, big &num2) {
 	vector<int> result;
@@ -293,7 +285,6 @@ big big::Prepair_for_Mult(big &num1, big &num2) {
 
 }
 
-
 void big::Multiplication(std::vector<int> big, std::vector<int> small, std::vector<int>& result) {
 
 	vector<int> currentsumm;
@@ -330,7 +321,6 @@ void big::Multiplication(std::vector<int> big, std::vector<int> small, std::vect
 
 	}
 }
-
 
 big big::Division(big &num1, big &num2,bool &CallAsMod) {
 	//условно считаем что первое число больше второго
@@ -402,44 +392,14 @@ big big::Division(big &num1, big &num2,bool &CallAsMod) {
 
 }
 
- /*big big:: Mod(big &num1, big &num2) {
-	
-		vector<int> one;
-		int big = 0;
-	
-		one.insert(one.end(), 1);
-		vector<int> answer;
-		answer.insert(answer.end(), 1);
-	
-		while (big != 2) {
-	
-			Prepair_for_Mult(array2, answer, result);
-			NormalLenght(array1, result);
-			for (int i = 0; i < array1.size(); i++) {
-				if (array1[i] > result[i]) {
-					big = 1;
-					break;
-				}
-				else if (array1[i] < result[i]) {
-					big = 2;
-					break;
-				}
-			}
-			if (big == 2) break;
-			result.clear();
-			Summ(answer, one, result);
-			answer = result;
-	
-			result.clear();
-	
-	
-		}
-	
-		Diff(answer, one, result);
-		answer = result;
-		Prepair_for_Mult(array2, answer, result);
-		answer = result;
-		Diff(array1,answer,result);
-	
-	
-	}*/
+void big::operator=(big &input) {
+	(*array).clear();
+	for (int i = 0; i < (*input.array).size(); i++) {
+		(*array).insert((*array).end(), (*input.array)[i]);
+
+	}
+
+	znak = std::make_shared<bool>(*input.znak);
+
+
+}

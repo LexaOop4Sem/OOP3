@@ -23,16 +23,9 @@ string check() {
 	string str;
 	int  err = 1;
 	int count;
-//char a = '1';//49
-//char b = '9';//57
-//cout << (int)a << endl;
-//cout << (int)b;
-
-	//|| ((int)(str[0]>48)) || ((int)(str[0]<56)
-
 
 	cin >> str;
-	cout << (int)str[0] << endl;
+	//cout << (int)str[0] << endl;
 
 	while (!((str[0]=='+')|| (str[0] == '-')|| ((int)(str[0]>48))  || ((int)(str[0]<56))))
 	{
@@ -67,12 +60,13 @@ void menu() {
 
 	cout << "enter 1" << endl;
  input= check();
+	
 	big num1(input);
 
 
 	//num1.set_num(input);
 	cout << endl << "-----------num1--------" << endl;
-	num1.get_num();
+	//num1.get_num();
 
 
 	input.clear();
@@ -84,12 +78,17 @@ void menu() {
 	cout << endl << "-----------num2--------" << endl;
 	num2.get_num();
 	cout << endl;
-	////////////////---------------------------summ
-	/*num1.summ(num1, num2);
+	
+	//////////---------------------------summ
+	//num1.summ(num1, num2);
 	big out= num1.summ(num1, num2);
-	out.get_num();*/
 
+	out.get_num();
 
+	input = "+0";
+	num1.set_num(input);
+	cout << endl;
+		out.get_num();
 
 
 	//разность
@@ -114,56 +113,56 @@ out.get_num();*/
 
 
 
-	int Choise;
-	//while (1) {
-		cout << "Choose Action\n"
-			<< "(1)Summ\n"
-			<< "(2)Diff\n"
-			<< "(3)Mult\n"
-			<< "(4)Div\n"
-			<< "(5)Mod\n"
-			<< "(6)EXIT\n";
+	//int Choise;
+	////while (1) {
+	//	cout << "Choose Action\n"
+	//		<< "(1)Summ\n"
+	//		<< "(2)Diff\n"
+	//		<< "(3)Mult\n"
+	//		<< "(4)Div\n"
+	//		<< "(5)Mod\n"
+	//		<< "(6)EXIT\n";
 
-		cin >> Choise;
+	//	cin >> Choise;
 
-		switch (Choise)
-		{
-		case 1: {
-			big out = num1.summ(num1, num2);
-			out.get_num();
-			break;
-		}
-		case 2: {
-			bool PlaseOfCall = 1;
-			big out = num1.diff(num1, num2, PlaseOfCall);
-			out.get_num();
-			break;
-		}
-		case 3: {
-			big out = num1.Prepair_for_Mult(num1, num2);
-			out.get_num();
-			break;
-		}
-		case 4: {
-			bool CallAsMod = 0;
-			big out = num1.Division(num1, num2, CallAsMod);
-			out.get_num();
-			break;
-		}
-		case 5: {
-			bool CallAsMod = 1;
-			big out = num1.Division(num1, num2, CallAsMod);
-			out.get_num();
-			break;
-		}
-		case 6: {
-			exit(0);
-		}
-		default: {
-			cout << "incorrect expression\n"
-				<< "try again\n";
-		}
-		}
+	//	switch (Choise)
+	//	{
+	//	case 1: {
+	//		big out = num1.summ(num1, num2);
+	//		out.get_num();
+	//		break;
+	//	}
+	//	case 2: {
+	//		bool PlaseOfCall = 1;
+	//		big out = num1.diff(num1, num2, PlaseOfCall);
+	//		out.get_num();
+	//		break;
+	//	}
+	//	case 3: {
+	//		big out = num1.Prepair_for_Mult(num1, num2);
+	//		out.get_num();
+	//		break;
+	//	}
+	//	case 4: {
+	//		bool CallAsMod = 0;
+	//		big out = num1.Division(num1, num2, CallAsMod);
+	//		out.get_num();
+	//		break;
+	//	}
+	//	case 5: {
+	//		bool CallAsMod = 1;
+	//		big out = num1.Division(num1, num2, CallAsMod);
+	//		out.get_num();
+	//		break;
+	//	}
+	//	case 6: {
+	//		exit(0);
+	//	}
+	//	default: {
+	//		cout << "incorrect expression\n"
+	//			<< "try again\n";
+	//	}
+	//	}
 //	}
 }
 

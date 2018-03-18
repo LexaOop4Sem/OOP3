@@ -8,8 +8,10 @@
 class big {
 
 public:
+
 	big(std::vector<int> &array1, bool&znk);
 	big(std::string &input);
+	void operator=(big &input);
 void NormalLenght(std::vector<int> &array1, std::vector<int> &array2);
 void set_num(std::string &input);
 void get_num();
@@ -35,15 +37,5 @@ private:
 	std::shared_ptr<std::vector<int>> array = std::make_shared<std::vector<int> >(std::move(mVector));
 	std::shared_ptr<bool> znak;
 	
-
-	//std::unique_ptr<std::vector<int>> p1=new (vector<int>);
-	/*std::vector<uint8_t> mVector;
-	auto mSharedPtr = std::make_shared<std::vector<uint8_t> >(std::move(mVector));*/
-	// mSharedPtr = std::make_shared<std::vector<int> >();
-	//std::vector<int> *array;
-//	unique_ptr<int> znak;
-//	shared_ptr<std::vector<int>> array;
-	//std::unique_ptr<vector<int>> array;
-	//std::unique_ptr<vector<int>> array;
 };
 
