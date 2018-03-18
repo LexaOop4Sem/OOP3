@@ -12,6 +12,8 @@ public:
 	big(std::vector<int> &array1, bool&znk);
 	big(std::string &input);
 	void operator=(big &input);
+	bool operator >(big &input);
+	big operator -(big &input);
 void NormalLenght(std::vector<int> &array1, std::vector<int> &array2);
 void set_num(std::string &input);
 void get_num();

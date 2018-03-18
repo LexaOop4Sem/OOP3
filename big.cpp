@@ -403,3 +403,97 @@ void big::operator=(big &input) {
 
 
 }
+
+bool big::operator >(big &input) {
+	if ((*znak == 0) && ((*input.znak) == 1)) {
+		return 1;
+	}
+	else if ((*znak == 1) && ((*input.znak) == 0)) {
+		return 0;
+	}
+	else {
+		int biggest;
+		NormalLenght((*array), (*input.array));
+		FindBiggest((*array), (*input.array), biggest);
+		if (((*znak == 0) && ((*input.znak) == 0))) {
+			if (biggest == 1) return 1;
+			else return 0;
+		}
+		else {
+			if (biggest == 1) return 0;
+			else return 1;
+		}
+	}
+}
+big big::operator -(big &input) {
+
+
+	int biggest = 0;
+	int buff = 0;
+	int curr;
+	vector<int> result;
+	if (*input.znak == 1) {
+		*input.znak = 0;
+		big out = input.summ(*this, input);
+		return out;
+	}
+	NormalLenght((*array), (*input.array));
+	FindBiggest((*array), (*input.array), biggest);
+
+		if (biggest == 1) {
+			for (int i = ((*array)).size() - 1; i > -1; i--) {
+				curr = ((*array)[i] - buff) - (*input.array)[i];
+				if (curr < 0) {
+					curr = ((10 + (*array)[i] - buff) - (*input.array)[i]);
+					buff = 1;
+				}
+
+
+				else if (curr >= 0) {
+					buff = 0;
+
+				}
+				result.insert(result.begin(), curr);
+			}
+		//	cout << endl << "+" << endl;
+
+
+			while (result[0] == 0) {
+				result.erase(result.begin() + 0);
+			}
+			big out(result, *znak);
+			return out;
+
+		}
+
+		if (biggest == 2) {
+			for (int i = (*array).size() - 1; i > -1; i--) {
+				curr = ((*input.array)[i] - buff) - (*array)[i];
+				if (curr < 0) {
+					curr = ((10 + (*input.array)[i]) - (*input.array)[i]);
+					buff = 1;
+				}
+				else if (curr >= 0) {
+					buff = 0;
+
+				}
+				result.insert(result.begin(), curr);
+			}
+
+
+		//	cout << endl << "-" << endl;
+
+
+			while (result[0] == 0) {
+				result.erase(result.begin() + 0);
+			}
+			big out(result, *input.znak);
+			return out;
+		}
+		if (biggest == 0) {
+
+			result.insert(result.begin(), 0);
+			big out(result, *input.znak);
+		}
+	
+}

@@ -78,17 +78,21 @@ void menu() {
 	cout << endl << "-----------num2--------" << endl;
 	num2.get_num();
 	cout << endl;
+
+	if (num1 > num2) {
+		cout << "first is bigger";
+	}
+	else cout << "first is NOT bigger";
 	
-	//////////---------------------------summ
-	//num1.summ(num1, num2);
-	big out= num1.summ(num1, num2);
+	cout << "------------------------------------" << endl;
+	big out= num1 - num2;
 
 	out.get_num();
 
-	input = "+0";
-	num1.set_num(input);
-	cout << endl;
-		out.get_num();
+	//////////---------------------------summ
+	//num1.summ(num1, num2);
+	/*big out= num1.summ(num1, num2);
+	out.get_num();*/
 
 
 	//разность
