@@ -83,11 +83,12 @@ void menu() {
 		cout << "first is bigger";
 	}
 	else cout << "first is NOT bigger";
-	
-	cout << "------------------------------------" << endl;
+	cout << endl;
+	cout <<endl<<"-----------------Diff-------------------          ";
 	big out= num1 - num2;
 
 	out.get_num();
+	cout << endl;
 
 	//////////---------------------------summ
 	//num1.summ(num1, num2);

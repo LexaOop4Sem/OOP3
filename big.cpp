@@ -47,7 +47,7 @@ void big::set_num(std::string &input)
 void big::get_num() {
 
 	if (*znak == 0) cout << "+";
-	else cout << "-";
+	//else cout << "-";
 
 	for (int i = 0; i < (*array).size(); i++) {
 				cout << (*array)[i];
